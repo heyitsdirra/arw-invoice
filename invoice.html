@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Invoice Pesanan</title>
+
+<style>
+
+body{
+font-family:"Segoe UI",sans-serif;
+background:#fafafa;
+padding:40px;
+text-align:center;
+}
+
+.card{
+background:white;
+max-width:420px;
+margin:auto;
+padding:35px;
+border-radius:16px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.logo{
+font-size:22px;
+font-weight:600;
+color:#7a4b2a;
+margin-bottom:15px;
+}
+
+.invoice-title{
+font-size:20px;
+margin-bottom:10px;
+}
+
+.info{
+color:#555;
+margin:8px 0;
+}
+
+.total{
+font-size:20px;
+font-weight:600;
+margin-top:20px;
+color:#7a4b2a;
+}
+
+button{
+margin-top:25px;
+padding:12px 20px;
+border:none;
+border-radius:8px;
+background:#7a4b2a;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+background:#5f371c;
+}
+
+/* popup */
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.4);
+}
+
+.modal-content{
+background:white;
+padding:30px;
+border-radius:12px;
+width:300px;
+margin:200px auto;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="logo">Aurora Cookies 🍪</div>
+
+<div class="invoice-title">Invoice Pesanan</div>
+
+<p class="info" id="sapaan"></p>
+
+<p class="info">Produk : Kue Kering</p>
+<p class="info">Jumlah : 2 Toples</p>
+
+<div class="total">Total: Rp120.000</div>
+
+<button onclick="openRek()">
+Info Rekening Pembayaran
+</button>
+
+</div>
+
+
+<div class="modal" id="modalRek">
+
+<div class="modal-content">
+
+<h3>Pembayaran</h3>
+
+<p>BCA</p>
+<p>123456789</p>
+<p>a.n Aurora</p>
+
+<br>
+
+<button onclick="closeRek()">Tutup</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+const params=new URLSearchParams(window.location.search);
+const nama=params.get("nama");
+
+document.getElementById("sapaan").innerText=
+"Halo "+nama+", terima kasih sudah menerima pesanan.";
+
+function openRek(){
+document.getElementById("modalRek").style.display="block";
+}
+
+function closeRek(){
+document.getElementById("modalRek").style.display="none";
+}
+
+</script>
+
+</body>
+</html>
