@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Create Invoice</title>
+
+<style>
+
+body{
+font-family: "Segoe UI", sans-serif;
+background: linear-gradient(135deg,#fff6ef,#f6e7da);
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:0;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:16px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+text-align:center;
+width:320px;
+}
+
+h1{
+margin-bottom:10px;
+color:#7a4b2a;
+}
+
+p{
+color:#777;
+font-size:14px;
+}
+
+input{
+width:100%;
+padding:12px;
+margin-top:15px;
+border-radius:8px;
+border:1px solid #ddd;
+}
+
+button{
+margin-top:18px;
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+background:#7a4b2a;
+color:white;
+font-size:15px;
+cursor:pointer;
+}
+
+button:hover{
+background:#5f371c;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Generate Invoice</h1>
+<p>Masukkan nama customer</p>
+
+<input id="nama" placeholder="Nama customer">
+
+<button onclick="goInvoice()">Buat Invoice</button>
+
+</div>
+
+<script>
+
+function goInvoice(){
+
+let nama=document.getElementById("nama").value;
+
+if(nama==""){
+alert("Nama belum diisi");
+return;
+}
+
+window.location.href="invoice.html?nama="+encodeURIComponent(nama);
+
+}
+
+</script>
+
+</body>
+</html>
